@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{76C1DE22-CA1C-4E77-8DD5-19FB58BA0ED1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RobotControl</RootNamespace>
+    <AssemblyName>RobotControl</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CIPCompolet, Version=1.8.0.0, Culture=neutral, PublicKeyToken=f3505d5782c23c5d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\bin\CIPCompolet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CIPCompolet64">
+      <HintPath>bin\Debug\bin\CIPCompolet64.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CIPCompoletProxyLib">
+      <HintPath>bin\Debug\bin\CIPCompoletProxyLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CIPCoreDotNet, Version=1.8.0.0, Culture=neutral, PublicKeyToken=f3505d5782c23c5d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\bin\CIPCoreDotNet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CIPPortCompolet, Version=1.8.0.0, Culture=neutral, PublicKeyToken=4708ecb14a494255, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\bin\CIPPortCompolet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HPSocket.Net">
+      <HintPath>bin\Debug\bin\HPSocket.Net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\bin\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>bin\Debug\bin\NLog.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SimpleTCP">
+      <HintPath>bin\Debug\bin\SimpleTCP.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SWIndustrialCtrls">
+      <HintPath>bin\Debug\bin\SWIndustrialCtrls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoThread.cs" />
+    <Compile Include="CameraServer.cs" />
+    <Compile Include="CameraSvr.cs" />
+    <Compile Include="CIP.cs" />
+    <Compile Include="FiniteStateMachine.cs" />
+    <Compile Include="HardwareCfg.cs" />
+    <Compile Include="MainFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrm.Designer.cs">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Memcpy.cs" />
+    <Compile Include="Packet.cs" />
+    <Compile Include="PLCInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlHelper.cs" />
+    <Compile Include="Zmcaux.cs" />
+    <Compile Include="ZMControl.cs" />
+    <Compile Include="SHUTools\Adler32Checksum.cs" />
+    <Compile Include="SHUTools\CommsMath.cs" />
+    <Compile Include="SHUTools\INIHelp.cs" />
+    <Compile Include="SHUTools\InputMethod.cs" />
+    <Compile Include="SHUTools\KeyboardHook.cs" />
+    <Compile Include="SHUTools\Win32Api.cs" />
+    <EmbeddedResource Include="MainFrm.resx">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Scripts\jquery-2.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HPSocket\hpsocket_cn.txt" />
+    <Content Include="HPSocket\hpsocket_en.txt" />
+    <Content Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\nugetexample.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\HPSocket.Net.6.0.1.1\build\HPSocket.Net.targets" Condition="Exists('..\packages\HPSocket.Net.6.0.1.1\build\HPSocket.Net.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\HPSocket.Net.6.0.1.1\build\HPSocket.Net.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\HPSocket.Net.6.0.1.1\build\HPSocket.Net.targets'))" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>mkdir ..\$(ConfigurationName)\bin
+move *.dll  ..\$(ConfigurationName)\bin
+move *.pdb  ..\$(ConfigurationName)\bin</PostBuildEvent>
+  </PropertyGroup>
+</Project>

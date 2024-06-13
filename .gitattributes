@@ -1,0 +1,4 @@
+ReadMe.md filter=lfs diff=lfs merge=lfs -text
+RobotControl filter=lfs diff=lfs merge=lfs -text
+RobotControl.sln filter=lfs diff=lfs merge=lfs -text
+packages filter=lfs diff=lfs merge=lfs -text
